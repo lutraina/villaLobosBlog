@@ -1,18 +1,15 @@
 {% block navbar %}
-		<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">
-			<ul id="menu-mylabel">
-				<li><a href="{{ path('homepage') }}" style="font-size: 14pt">MyLabel</a>
-				</li>
-				<li><a href="#">Label</a>
-					<ul>
-						<li><a href="">Qu'est-ce ?</a></li>
-						<li><a href="">Conditions d'obtention</a></li>
-					</ul>
-				</li>
-				<li><a href="{{ path('homepage') }}">Suivre mes demandes</a>
-				</li>
-				<li><a href="{{ path('homepage') }}">Nouvelle demande de label</a>
-				</li>
-			</ul>
-		</nav>
+		<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="#" class="button special fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
 {% endblock %}

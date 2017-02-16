@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /Users/lucianahembert/Documents/sites/symfony1VillaOrange/app/config/routing_dev.yml

@@ -1,7 +1,7 @@
-{% extends '::base.html.twig' %}
+{% extends '::base.body.html.twig' %}
 
 
-{% block body %}
+{% block banner %}
 
 {{ knp_menu_render('BlogServingBundle:Builder:mainMenu') }}
 {{ checkIfSpam(text) }}
