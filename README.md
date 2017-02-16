@@ -1,4 +1,9 @@
-sym
-===
+Project of a blog on Villa Lobos made with Symfony 2.8
 
-A Symfony project created on November 22, 2016, 12:07 am.
+Luciana Hembert
+
+-service with dependency indejetion par constructeur
+-service tags
+-bundle compiler pass on service tags
+-ckeditor
+
