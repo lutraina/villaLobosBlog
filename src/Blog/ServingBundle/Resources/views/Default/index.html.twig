@@ -1,4 +1,13 @@
-Index
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
 
 {{ knp_menu_render('BlogServingBundle:Builder:mainMenu') }}
 {{ checkIfSpam(text) }}
+
+{% endblock %}
+
+
+
+

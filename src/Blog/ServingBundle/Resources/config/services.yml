@@ -17,6 +17,6 @@ services:
             - { name: twig.extension, alias: foo }
 
     blog.twig_extension_chain:
-        class: Blog\ServingBundle\Twig\TransportChain
+        class: Blog\ServingBundle\Twig\ExtensionChain
         arguments: ['@logger']
         

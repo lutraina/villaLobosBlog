@@ -1,7 +1,8 @@
 <?php 
-// src/Blog/ServingBundle/Twig/TransportChain.php
+// src/Blog/ServingBundle/Twig/ExtensionChain.php
 
 namespace Blog\ServingBundle\Twig;
+use Psr\Log\LoggerInterface;
 
 class ExtensionChain
 {
