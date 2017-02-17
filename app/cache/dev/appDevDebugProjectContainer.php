@@ -267,21 +267,12 @@ class appDevDebugProjectContainer extends Container
             'twig.controller.exception' => 'getTwig_Controller_ExceptionService',
             'twig.controller.preview_error' => 'getTwig_Controller_PreviewErrorService',
             'twig.exception_listener' => 'getTwig_ExceptionListenerService',
-            'twig.extension.actions' => 'getTwig_Extension_ActionsService',
-            'twig.extension.assets' => 'getTwig_Extension_AssetsService',
             'twig.extension.code' => 'getTwig_Extension_CodeService',
-            'twig.extension.debug' => 'getTwig_Extension_DebugService',
             'twig.extension.debug.stopwatch' => 'getTwig_Extension_Debug_StopwatchService',
             'twig.extension.dump' => 'getTwig_Extension_DumpService',
             'twig.extension.expression' => 'getTwig_Extension_ExpressionService',
-            'twig.extension.form' => 'getTwig_Extension_FormService',
-            'twig.extension.httpfoundation' => 'getTwig_Extension_HttpfoundationService',
-            'twig.extension.httpkernel' => 'getTwig_Extension_HttpkernelService',
             'twig.extension.logout_url' => 'getTwig_Extension_LogoutUrlService',
-            'twig.extension.profiler' => 'getTwig_Extension_ProfilerService',
-            'twig.extension.routing' => 'getTwig_Extension_RoutingService',
             'twig.extension.security' => 'getTwig_Extension_SecurityService',
-            'twig.extension.trans' => 'getTwig_Extension_TransService',
             'twig.extension.webprofiler' => 'getTwig_Extension_WebprofilerService',
             'twig.extension.yaml' => 'getTwig_Extension_YamlService',
             'twig.loader' => 'getTwig_LoaderService',
@@ -470,60 +461,22 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getBlog_TwigExtensionChainService()
     {
-        $a = $this->get('blog_serving.antispam');
-        $b = $this->get('blog_twig_extension');
-        $c = $this->get('assetic.twig_extension');
-        $d = $this->get('twig.extension.logout_url');
-        $e = $this->get('twig.extension.security');
-        $f = $this->get('twig.extension.code');
-        $g = $this->get('twig.extension.yaml');
-        $h = $this->get('twig.extension.debug.stopwatch');
-        $i = $this->get('twig.extension.expression');
-        $j = $this->get('doctrine.twig.doctrine_extension');
-        $k = $this->get('ivory_ck_editor.twig_extension');
-        $l = $this->get('knp_menu.twig.extension');
-        $m = $this->get('twig.extension.dump');
-        $n = $this->get('twig.extension.webprofiler');
-
         $this->services['blog.twig_extension_chain'] = $instance = new \Blog\ServingBundle\Twig\ExtensionChain($this->get('logger'));
 
-        $instance->getTest2($a);
-        $instance->getTest2($b);
-        $instance->getTest2($c);
-        $instance->getTest2($d);
-        $instance->getTest2($e);
-        $instance->getTest2($f);
-        $instance->getTest2($g);
-        $instance->getTest2($h);
-        $instance->getTest2($i);
-        $instance->getTest2($j);
-        $instance->getTest2($k);
-        $instance->getTest2($l);
-        $instance->getTest2($m);
-        $instance->getTest2($n);
-        $instance->getTest2($a);
-        $instance->getTest2($b);
-        $instance->getTest2($c);
-        $instance->getTest2($d);
-        $instance->getTest2($e);
-        $instance->getTest2($this->get('twig.extension.profiler'));
-        $instance->getTest2($this->get('twig.extension.trans'));
-        $instance->getTest2($this->get('twig.extension.assets'));
-        $instance->getTest2($this->get('twig.extension.actions'));
-        $instance->getTest2($f);
-        $instance->getTest2($this->get('twig.extension.routing'));
-        $instance->getTest2($g);
-        $instance->getTest2($h);
-        $instance->getTest2($i);
-        $instance->getTest2($this->get('twig.extension.httpkernel'));
-        $instance->getTest2($this->get('twig.extension.httpfoundation'));
-        $instance->getTest2($this->get('twig.extension.debug'));
-        $instance->getTest2($this->get('twig.extension.form'));
-        $instance->getTest2($j);
-        $instance->getTest2($k);
-        $instance->getTest2($l);
-        $instance->getTest2($m);
-        $instance->getTest2($n);
+        $instance->addExtension($this->get('blog_serving.antispam'));
+        $instance->addExtension($this->get('blog_twig_extension'));
+        $instance->addExtension($this->get('assetic.twig_extension'));
+        $instance->addExtension($this->get('twig.extension.logout_url'));
+        $instance->addExtension($this->get('twig.extension.security'));
+        $instance->addExtension($this->get('twig.extension.code'));
+        $instance->addExtension($this->get('twig.extension.yaml'));
+        $instance->addExtension($this->get('twig.extension.debug.stopwatch'));
+        $instance->addExtension($this->get('twig.extension.expression'));
+        $instance->addExtension($this->get('doctrine.twig.doctrine_extension'));
+        $instance->addExtension($this->get('ivory_ck_editor.twig_extension'));
+        $instance->addExtension($this->get('knp_menu.twig.extension'));
+        $instance->addExtension($this->get('twig.extension.dump'));
+        $instance->addExtension($this->get('twig.extension.webprofiler'));
 
         return $instance;
     }
@@ -2518,7 +2471,7 @@ class appDevDebugProjectContainer extends Container
 
         $e = new \Symfony\Component\Security\Http\AccessMap();
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '58a60070a63e79.18615438', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '58a692852c36a2.93609958', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
     }
 
     /**
@@ -3468,16 +3421,22 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTwigService()
     {
-        $a = new \Symfony\Bridge\Twig\AppVariable();
-        $a->setEnvironment('dev');
-        $a->setDebug(true);
+        $a = $this->get('request_stack');
+        $b = $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE);
+        $c = $this->get('fragment.handler');
+
+        $d = new \Symfony\Bridge\Twig\Extension\HttpFoundationExtension($a, $b);
+
+        $e = new \Symfony\Bridge\Twig\AppVariable();
+        $e->setEnvironment('dev');
+        $e->setDebug(true);
         if ($this->has('security.token_storage')) {
-            $a->setTokenStorage($this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+            $e->setTokenStorage($this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE));
         }
         if ($this->has('request_stack')) {
-            $a->setRequestStack($this->get('request_stack', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+            $e->setRequestStack($a);
         }
-        $a->setContainer($this);
+        $e->setContainer($this);
 
         $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'form_themes' => array(0 => 'form_div_layout.html.twig'), 'autoescape' => 'name', 'cache' => (__DIR__.'/twig'), 'charset' => 'UTF-8', 'paths' => array(), 'date' => array('format' => 'F j, Y H:i', 'interval_format' => '%d days', 'timezone' => NULL), 'number_format' => array('decimals' => 0, 'decimal_point' => '.', 'thousands_separator' => ',')));
 
@@ -3486,25 +3445,25 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension($this->get('assetic.twig_extension'));
         $instance->addExtension($this->get('twig.extension.logout_url'));
         $instance->addExtension($this->get('twig.extension.security'));
-        $instance->addExtension($this->get('twig.extension.profiler'));
-        $instance->addExtension($this->get('twig.extension.trans'));
-        $instance->addExtension($this->get('twig.extension.assets'));
-        $instance->addExtension($this->get('twig.extension.actions'));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\ProfilerExtension($this->get('twig.profile'), $this->get('debug.stopwatch', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator')));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\AssetExtension($this->get('assets.packages'), $d));
+        $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\ActionsExtension($c));
         $instance->addExtension($this->get('twig.extension.code'));
-        $instance->addExtension($this->get('twig.extension.routing'));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router')));
         $instance->addExtension($this->get('twig.extension.yaml'));
         $instance->addExtension($this->get('twig.extension.debug.stopwatch'));
         $instance->addExtension($this->get('twig.extension.expression'));
-        $instance->addExtension($this->get('twig.extension.httpkernel'));
-        $instance->addExtension($this->get('twig.extension.httpfoundation'));
-        $instance->addExtension($this->get('twig.extension.debug'));
-        $instance->addExtension($this->get('twig.extension.form'));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($c));
+        $instance->addExtension($d);
+        $instance->addExtension(new \Twig_Extension_Debug());
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'IvoryCKEditorBundle:Form:ckeditor_widget.html.twig', 1 => 'form_div_layout.html.twig')), $this->get('security.csrf.token_manager', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
         $instance->addExtension($this->get('doctrine.twig.doctrine_extension'));
         $instance->addExtension($this->get('ivory_ck_editor.twig_extension'));
         $instance->addExtension($this->get('knp_menu.twig.extension'));
         $instance->addExtension($this->get('twig.extension.dump'));
         $instance->addExtension($this->get('twig.extension.webprofiler'));
-        $instance->addGlobal('app', $a);
+        $instance->addGlobal('app', $e);
         call_user_func(array(new \Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator('F j, Y H:i', '%d days', NULL, 0, '.', ','), 'configure'), $instance);
 
         return $instance;
@@ -3956,7 +3915,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58a60070a63e79.18615438')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58a692852c36a2.93609958')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4083,40 +4042,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'twig.extension.actions' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bundle\TwigBundle\Extension\ActionsExtension A Symfony\Bundle\TwigBundle\Extension\ActionsExtension instance
-     */
-    protected function getTwig_Extension_ActionsService()
-    {
-        return $this->services['twig.extension.actions'] = new \Symfony\Bundle\TwigBundle\Extension\ActionsExtension($this->get('fragment.handler'));
-    }
-
-    /**
-     * Gets the 'twig.extension.assets' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bridge\Twig\Extension\AssetExtension A Symfony\Bridge\Twig\Extension\AssetExtension instance
-     */
-    protected function getTwig_Extension_AssetsService()
-    {
-        return $this->services['twig.extension.assets'] = new \Symfony\Bridge\Twig\Extension\AssetExtension($this->get('assets.packages'), $this->get('twig.extension.httpfoundation'));
-    }
-
-    /**
      * Gets the 'twig.extension.code' service.
      *
      * This service is shared.
@@ -4131,23 +4056,6 @@ class appDevDebugProjectContainer extends Container
     protected function getTwig_Extension_CodeService()
     {
         return $this->services['twig.extension.code'] = new \Symfony\Bridge\Twig\Extension\CodeExtension(NULL, $this->targetDirs[2], 'UTF-8');
-    }
-
-    /**
-     * Gets the 'twig.extension.debug' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Twig_Extension_Debug A Twig_Extension_Debug instance
-     */
-    protected function getTwig_Extension_DebugService()
-    {
-        return $this->services['twig.extension.debug'] = new \Twig_Extension_Debug();
     }
 
     /**
@@ -4202,57 +4110,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'twig.extension.form' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bridge\Twig\Extension\FormExtension A Symfony\Bridge\Twig\Extension\FormExtension instance
-     */
-    protected function getTwig_Extension_FormService()
-    {
-        return $this->services['twig.extension.form'] = new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'IvoryCKEditorBundle:Form:ckeditor_widget.html.twig', 1 => 'form_div_layout.html.twig')), $this->get('security.csrf.token_manager', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
-    }
-
-    /**
-     * Gets the 'twig.extension.httpfoundation' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bridge\Twig\Extension\HttpFoundationExtension A Symfony\Bridge\Twig\Extension\HttpFoundationExtension instance
-     */
-    protected function getTwig_Extension_HttpfoundationService()
-    {
-        return $this->services['twig.extension.httpfoundation'] = new \Symfony\Bridge\Twig\Extension\HttpFoundationExtension($this->get('request_stack'), $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE));
-    }
-
-    /**
-     * Gets the 'twig.extension.httpkernel' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bridge\Twig\Extension\HttpKernelExtension A Symfony\Bridge\Twig\Extension\HttpKernelExtension instance
-     */
-    protected function getTwig_Extension_HttpkernelService()
-    {
-        return $this->services['twig.extension.httpkernel'] = new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($this->get('fragment.handler'));
-    }
-
-    /**
      * Gets the 'twig.extension.logout_url' service.
      *
      * This service is shared.
@@ -4270,40 +4127,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'twig.extension.profiler' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bridge\Twig\Extension\ProfilerExtension A Symfony\Bridge\Twig\Extension\ProfilerExtension instance
-     */
-    protected function getTwig_Extension_ProfilerService()
-    {
-        return $this->services['twig.extension.profiler'] = new \Symfony\Bridge\Twig\Extension\ProfilerExtension($this->get('twig.profile'), $this->get('debug.stopwatch', ContainerInterface::NULL_ON_INVALID_REFERENCE));
-    }
-
-    /**
-     * Gets the 'twig.extension.routing' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bridge\Twig\Extension\RoutingExtension A Symfony\Bridge\Twig\Extension\RoutingExtension instance
-     */
-    protected function getTwig_Extension_RoutingService()
-    {
-        return $this->services['twig.extension.routing'] = new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router'));
-    }
-
-    /**
      * Gets the 'twig.extension.security' service.
      *
      * This service is shared.
@@ -4318,23 +4141,6 @@ class appDevDebugProjectContainer extends Container
     protected function getTwig_Extension_SecurityService()
     {
         return $this->services['twig.extension.security'] = new \Symfony\Bridge\Twig\Extension\SecurityExtension($this->get('security.authorization_checker', ContainerInterface::NULL_ON_INVALID_REFERENCE));
-    }
-
-    /**
-     * Gets the 'twig.extension.trans' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * This service is private.
-     * If you want to be able to request this service from the container directly,
-     * make it public, otherwise you might end up with broken code.
-     *
-     * @return \Symfony\Bridge\Twig\Extension\TranslationExtension A Symfony\Bridge\Twig\Extension\TranslationExtension instance
-     */
-    protected function getTwig_Extension_TransService()
-    {
-        return $this->services['twig.extension.trans'] = new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator'));
     }
 
     /**

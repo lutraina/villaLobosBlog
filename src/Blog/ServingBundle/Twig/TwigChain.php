@@ -19,6 +19,7 @@ class ExtensionChain
 
     public function addExtension(\Twig_Extension $extension)
     {
+        $this->logger->debug(__METHOD__);
         $this->extensions[] = $extension;
     }
     

@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Biographie creation</h1>
 
-    {{ checkIfSpam(text) }}
+    {{ checkIfEmail('mail') }}
     
     {{ form_start(form) }}
         {{ form_widget(form) }}

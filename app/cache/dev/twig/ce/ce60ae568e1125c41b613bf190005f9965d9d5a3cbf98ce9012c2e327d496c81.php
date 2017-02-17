@@ -21,27 +21,27 @@ class __TwigTemplate_2b1479f1fb8caa02211fe1be0145c0fe03d7c03ebf52efb5e1c4b0a4b81
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_266e626075990f7995b429090ff83da465f8400c31923a9265198ac0d6e751c9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_266e626075990f7995b429090ff83da465f8400c31923a9265198ac0d6e751c9->enter($__internal_266e626075990f7995b429090ff83da465f8400c31923a9265198ac0d6e751c9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "biographie/new.html.twig"));
+        $__internal_9be8aa311fe569b3476f64e39aa67901cdf3843bfe8a4fa6954cb2421b8e3992 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9be8aa311fe569b3476f64e39aa67901cdf3843bfe8a4fa6954cb2421b8e3992->enter($__internal_9be8aa311fe569b3476f64e39aa67901cdf3843bfe8a4fa6954cb2421b8e3992_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "biographie/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_266e626075990f7995b429090ff83da465f8400c31923a9265198ac0d6e751c9->leave($__internal_266e626075990f7995b429090ff83da465f8400c31923a9265198ac0d6e751c9_prof);
+        $__internal_9be8aa311fe569b3476f64e39aa67901cdf3843bfe8a4fa6954cb2421b8e3992->leave($__internal_9be8aa311fe569b3476f64e39aa67901cdf3843bfe8a4fa6954cb2421b8e3992_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_3305fdb88941cfa458354d69173f0a2aaac185e97855e6d594fad5aae25728c2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3305fdb88941cfa458354d69173f0a2aaac185e97855e6d594fad5aae25728c2->enter($__internal_3305fdb88941cfa458354d69173f0a2aaac185e97855e6d594fad5aae25728c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_b379ec299eaeb51e64b80af93bebe180e032238acffe8ba44bc03ba0e9620b9f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b379ec299eaeb51e64b80af93bebe180e032238acffe8ba44bc03ba0e9620b9f->enter($__internal_b379ec299eaeb51e64b80af93bebe180e032238acffe8ba44bc03ba0e9620b9f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Biographie creation</h1>
 
     ";
         // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('Blog\ServingBundle\Twig\AppExtension')->isSpam((isset($context["text"]) ? $context["text"] : $this->getContext($context, "text"))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Blog\ServingBundle\Twig\AppExtension')->isEmail((isset($context["text"]) ? $context["text"] : $this->getContext($context, "text"))), "html", null, true);
         echo "
     
     ";
@@ -68,7 +68,7 @@ class __TwigTemplate_2b1479f1fb8caa02211fe1be0145c0fe03d7c03ebf52efb5e1c4b0a4b81
     </ul>
 ";
         
-        $__internal_3305fdb88941cfa458354d69173f0a2aaac185e97855e6d594fad5aae25728c2->leave($__internal_3305fdb88941cfa458354d69173f0a2aaac185e97855e6d594fad5aae25728c2_prof);
+        $__internal_b379ec299eaeb51e64b80af93bebe180e032238acffe8ba44bc03ba0e9620b9f->leave($__internal_b379ec299eaeb51e64b80af93bebe180e032238acffe8ba44bc03ba0e9620b9f_prof);
 
     }
 
@@ -102,7 +102,7 @@ class __TwigTemplate_2b1479f1fb8caa02211fe1be0145c0fe03d7c03ebf52efb5e1c4b0a4b81
 {% block body %}
     <h1>Biographie creation</h1>
 
-    {{ checkIfSpam(text) }}
+    {{ checkIfEmail(text) }}
     
     {{ form_start(form) }}
         {{ form_widget(form) }}

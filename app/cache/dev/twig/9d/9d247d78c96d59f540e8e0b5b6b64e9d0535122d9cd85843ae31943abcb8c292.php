@@ -12,6 +12,7 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
         $this->blocks = array(
             'body' => array($this, 'block_body'),
             'navbar' => array($this, 'block_navbar'),
+            'footer' => array($this, 'block_footer'),
         );
     }
 
@@ -22,20 +23,20 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2881bb4a2643e910f4db941ebb3bf384cb018dcaa6c01f81ea9dd287edcc7631 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2881bb4a2643e910f4db941ebb3bf384cb018dcaa6c01f81ea9dd287edcc7631->enter($__internal_2881bb4a2643e910f4db941ebb3bf384cb018dcaa6c01f81ea9dd287edcc7631_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.body.html.twig"));
+        $__internal_e315a540b552f79e8629302f3017fe394601b6740a563f435ded4a508bc7d6f3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e315a540b552f79e8629302f3017fe394601b6740a563f435ded4a508bc7d6f3->enter($__internal_e315a540b552f79e8629302f3017fe394601b6740a563f435ded4a508bc7d6f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.body.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_2881bb4a2643e910f4db941ebb3bf384cb018dcaa6c01f81ea9dd287edcc7631->leave($__internal_2881bb4a2643e910f4db941ebb3bf384cb018dcaa6c01f81ea9dd287edcc7631_prof);
+        $__internal_e315a540b552f79e8629302f3017fe394601b6740a563f435ded4a508bc7d6f3->leave($__internal_e315a540b552f79e8629302f3017fe394601b6740a563f435ded4a508bc7d6f3_prof);
 
     }
 
     // line 4
     public function block_body($context, array $blocks = array())
     {
-        $__internal_2a3e5e461d4fef73d61c235aa10386466618ff3e83682dbc47a158c8eb26128a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2a3e5e461d4fef73d61c235aa10386466618ff3e83682dbc47a158c8eb26128a->enter($__internal_2a3e5e461d4fef73d61c235aa10386466618ff3e83682dbc47a158c8eb26128a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2613cbf2e514acbeb0a464dbfcb7bbf4286d6c512f77c1dc5a85d25d80bd797a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2613cbf2e514acbeb0a464dbfcb7bbf4286d6c512f77c1dc5a85d25d80bd797a->enter($__internal_2613cbf2e514acbeb0a464dbfcb7bbf4286d6c512f77c1dc5a85d25d80bd797a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
         echo "                
@@ -61,11 +62,10 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 \t\t\t\t\t<section id=\"banner\" class=\"major\">
 \t\t\t\t\t\t<div class=\"inner\">
 \t\t\t\t\t\t\t<header class=\"major\">
-\t\t\t\t\t\t\t\t<h1>Hi, my name is Forty</h1>
+\t\t\t\t\t\t\t\t<h1>Hello, Heitor Villa Lobos</h1>
 \t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t<div class=\"content\">
-\t\t\t\t\t\t\t\t<p>A responsive site template designed by HTML5 UP<br />
-\t\t\t\t\t\t\t\tand released under the Creative Commons.</p>
+\t\t\t\t\t\t\t\t<p>A blog on this awesome brasilian composer</p>
 \t\t\t\t\t\t\t\t<ul class=\"actions\">
 \t\t\t\t\t\t\t\t\t<li><a href=\"#one\" class=\"button next scrolly\">Get Started</a></li>
 \t\t\t\t\t\t\t\t</ul>
@@ -83,16 +83,20 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 \t\t\t\t\t\t\t\t\t\t<img src=\"images/pic01.jpg\" alt=\"\" />
 \t\t\t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t\t\t<header class=\"major\">
-\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Aliquam</a></h3>
+\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Bachianas Brasileiras</a></h3>
 \t\t\t\t\t\t\t\t\t\t<p>Ipsum dolor sit amet</p>
 \t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t</article>
 \t\t\t\t\t\t\t\t<article>
 \t\t\t\t\t\t\t\t\t<span class=\"image\">
-\t\t\t\t\t\t\t\t\t\t<img src=\"images/pic02.jpg\" alt=\"\" />
+                                                                            <img height=\"400px\" src=\"";
+        // line 54
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/BlogServing/Resources/images/pic02.jpg"), "html", null, true);
+        echo "\" alt=\"\" />
+\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t\t\t<header class=\"major\">
-\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Tempus</a></h3>
+\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Ciclo Brasileiro</a></h3>
 \t\t\t\t\t\t\t\t\t\t<p>feugiat amet tempus</p>
 \t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t</article>
@@ -200,22 +204,11 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</section>
 
-\t\t\t\t<!-- Footer -->
-\t\t\t\t\t<footer id=\"footer\">
-\t\t\t\t\t\t<div class=\"inner\">
-\t\t\t\t\t\t\t<ul class=\"icons\">
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-twitter\"><span class=\"label\">Twitter</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-facebook\"><span class=\"label\">Facebook</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-instagram\"><span class=\"label\">Instagram</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-github\"><span class=\"label\">GitHub</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-linkedin\"><span class=\"label\">LinkedIn</span></a></li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t<ul class=\"copyright\">
-\t\t\t\t\t\t\t\t<li>&copy; Untitled</li><li>Design: <a href=\"https://html5up.net\">HTML5 UP</a></li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</footer>
-
+\t\t\t\t";
+        // line 166
+        $this->displayBlock('footer', $context, $blocks);
+        // line 168
+        echo "        
 \t\t\t</div>
                 
                 
@@ -225,15 +218,15 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
                 
                  ";
         
-        $__internal_2a3e5e461d4fef73d61c235aa10386466618ff3e83682dbc47a158c8eb26128a->leave($__internal_2a3e5e461d4fef73d61c235aa10386466618ff3e83682dbc47a158c8eb26128a_prof);
+        $__internal_2613cbf2e514acbeb0a464dbfcb7bbf4286d6c512f77c1dc5a85d25d80bd797a->leave($__internal_2613cbf2e514acbeb0a464dbfcb7bbf4286d6c512f77c1dc5a85d25d80bd797a_prof);
 
     }
 
     // line 19
     public function block_navbar($context, array $blocks = array())
     {
-        $__internal_af2554e13c38fff4196656d0d613625f630256a81be1d61fe6656dfdfca1c6bc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_af2554e13c38fff4196656d0d613625f630256a81be1d61fe6656dfdfca1c6bc->enter($__internal_af2554e13c38fff4196656d0d613625f630256a81be1d61fe6656dfdfca1c6bc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "navbar"));
+        $__internal_1ecbfd411bfe9234f6dbda8a90c6b5d980a2dedba83e2f676e6534290296093d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1ecbfd411bfe9234f6dbda8a90c6b5d980a2dedba83e2f676e6534290296093d->enter($__internal_1ecbfd411bfe9234f6dbda8a90c6b5d980a2dedba83e2f676e6534290296093d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "navbar"));
 
         // line 20
         echo "                                    ";
@@ -241,7 +234,23 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
         // line 21
         echo "                                ";
         
-        $__internal_af2554e13c38fff4196656d0d613625f630256a81be1d61fe6656dfdfca1c6bc->leave($__internal_af2554e13c38fff4196656d0d613625f630256a81be1d61fe6656dfdfca1c6bc_prof);
+        $__internal_1ecbfd411bfe9234f6dbda8a90c6b5d980a2dedba83e2f676e6534290296093d->leave($__internal_1ecbfd411bfe9234f6dbda8a90c6b5d980a2dedba83e2f676e6534290296093d_prof);
+
+    }
+
+    // line 166
+    public function block_footer($context, array $blocks = array())
+    {
+        $__internal_0328795f2f58d81c50bf7c39850e626b3be7b3476081b5683e9a0a77d49b6cea = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0328795f2f58d81c50bf7c39850e626b3be7b3476081b5683e9a0a77d49b6cea->enter($__internal_0328795f2f58d81c50bf7c39850e626b3be7b3476081b5683e9a0a77d49b6cea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 167
+        echo "                                    ";
+        $this->loadTemplate("layout/footer.html.twig", "::base.body.html.twig", 167)->display($context);
+        // line 168
+        echo "                                ";
+        
+        $__internal_0328795f2f58d81c50bf7c39850e626b3be7b3476081b5683e9a0a77d49b6cea->leave($__internal_0328795f2f58d81c50bf7c39850e626b3be7b3476081b5683e9a0a77d49b6cea_prof);
 
     }
 
@@ -257,7 +266,7 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 
     public function getDebugInfo()
     {
-        return array (  242 => 21,  239 => 20,  233 => 19,  59 => 22,  57 => 19,  41 => 5,  35 => 4,  11 => 1,);
+        return array (  251 => 168,  248 => 167,  242 => 166,  235 => 21,  232 => 20,  226 => 19,  211 => 168,  209 => 166,  94 => 54,  60 => 22,  58 => 19,  42 => 5,  36 => 4,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -296,11 +305,10 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 \t\t\t\t\t<section id=\"banner\" class=\"major\">
 \t\t\t\t\t\t<div class=\"inner\">
 \t\t\t\t\t\t\t<header class=\"major\">
-\t\t\t\t\t\t\t\t<h1>Hi, my name is Forty</h1>
+\t\t\t\t\t\t\t\t<h1>Hello, Heitor Villa Lobos</h1>
 \t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t<div class=\"content\">
-\t\t\t\t\t\t\t\t<p>A responsive site template designed by HTML5 UP<br />
-\t\t\t\t\t\t\t\tand released under the Creative Commons.</p>
+\t\t\t\t\t\t\t\t<p>A blog on this awesome brasilian composer</p>
 \t\t\t\t\t\t\t\t<ul class=\"actions\">
 \t\t\t\t\t\t\t\t\t<li><a href=\"#one\" class=\"button next scrolly\">Get Started</a></li>
 \t\t\t\t\t\t\t\t</ul>
@@ -318,16 +326,17 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 \t\t\t\t\t\t\t\t\t\t<img src=\"images/pic01.jpg\" alt=\"\" />
 \t\t\t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t\t\t<header class=\"major\">
-\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Aliquam</a></h3>
+\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Bachianas Brasileiras</a></h3>
 \t\t\t\t\t\t\t\t\t\t<p>Ipsum dolor sit amet</p>
 \t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t</article>
 \t\t\t\t\t\t\t\t<article>
 \t\t\t\t\t\t\t\t\t<span class=\"image\">
-\t\t\t\t\t\t\t\t\t\t<img src=\"images/pic02.jpg\" alt=\"\" />
+                                                                            <img height=\"400px\" src=\"{{ asset('bundles/BlogServing/Resources/images/pic02.jpg') }}\" alt=\"\" />
+\t\t\t\t\t\t\t\t\t 
 \t\t\t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t\t\t<header class=\"major\">
-\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Tempus</a></h3>
+\t\t\t\t\t\t\t\t\t\t<h3><a href=\"landing.html\" class=\"link\">Ciclo Brasileiro</a></h3>
 \t\t\t\t\t\t\t\t\t\t<p>feugiat amet tempus</p>
 \t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t</article>
@@ -435,22 +444,9 @@ class __TwigTemplate_76357377e1929665ff4182765ec4f5c0d14dd3e7d451de77e8092c25ca4
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</section>
 
-\t\t\t\t<!-- Footer -->
-\t\t\t\t\t<footer id=\"footer\">
-\t\t\t\t\t\t<div class=\"inner\">
-\t\t\t\t\t\t\t<ul class=\"icons\">
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-twitter\"><span class=\"label\">Twitter</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-facebook\"><span class=\"label\">Facebook</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-instagram\"><span class=\"label\">Instagram</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-github\"><span class=\"label\">GitHub</span></a></li>
-\t\t\t\t\t\t\t\t<li><a href=\"#\" class=\"icon alt fa-linkedin\"><span class=\"label\">LinkedIn</span></a></li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t<ul class=\"copyright\">
-\t\t\t\t\t\t\t\t<li>&copy; Untitled</li><li>Design: <a href=\"https://html5up.net\">HTML5 UP</a></li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</footer>
-
+\t\t\t\t{% block footer %}
+                                    {%  include 'layout/footer.html.twig' %}
+                                {% endblock %}        
 \t\t\t</div>
                 
                 

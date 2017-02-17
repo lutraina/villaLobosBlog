@@ -759,115 +759,46 @@
     </service>
     <service id="blog.twig_extension_chain" class="Blog\ServingBundle\Twig\ExtensionChain">
       <argument type="service" id="logger"/>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="blog_serving.antispam"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="blog_twig_extension"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="assetic.twig_extension"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.logout_url"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.security"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.code"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.yaml"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.debug.stopwatch"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.expression"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="ivory_ck_editor.twig_extension"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="knp_menu.twig.extension"/>
       </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.dump"/>
       </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.webprofiler"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="blog_serving.antispam"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="blog_twig_extension"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="assetic.twig_extension"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.logout_url"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.security"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.profiler"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.trans"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.assets"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.actions"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.code"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.routing"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.yaml"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.debug.stopwatch"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.expression"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.httpkernel"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.httpfoundation"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.debug"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.form"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="doctrine.twig.doctrine_extension"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="ivory_ck_editor.twig_extension"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="knp_menu.twig.extension"/>
-      </call>
-      <call method="getTest2">
-        <argument type="service" id="twig.extension.dump"/>
-      </call>
-      <call method="getTest2">
+      <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
     </service>
@@ -2647,7 +2578,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58a60070a63e79.18615438</argument>
+            <argument>58a692852c36a2.93609958</argument>
           </service>
         </argument>
       </argument>
@@ -2784,7 +2715,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58a60070a63e79.18615438</argument>
+            <argument>58a692852c36a2.93609958</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2860,22 +2791,55 @@
         <argument type="service" id="twig.extension.security"/>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.profiler"/>
+        <argument type="service">
+          <service class="Symfony\Bridge\Twig\Extension\ProfilerExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="twig.profile"/>
+            <argument type="service" id="debug.stopwatch" on-invalid="null"/>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.trans"/>
+        <argument type="service">
+          <service class="Symfony\Bridge\Twig\Extension\TranslationExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="translator"/>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.assets"/>
+        <argument type="service">
+          <service class="Symfony\Bridge\Twig\Extension\AssetExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="assets.packages"/>
+            <argument type="service">
+              <service class="Symfony\Bridge\Twig\Extension\HttpFoundationExtension" public="false">
+                <tag name="twig.extension"/>
+                <argument type="service" id="request_stack"/>
+                <argument type="service" id="router.request_context" on-invalid="ignore"/>
+              </service>
+            </argument>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.actions"/>
+        <argument type="service">
+          <service class="Symfony\Bundle\TwigBundle\Extension\ActionsExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="fragment.handler"/>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.code"/>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.routing"/>
+        <argument type="service">
+          <service class="Symfony\Bridge\Twig\Extension\RoutingExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="router"/>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.yaml"/>
@@ -2887,16 +2851,48 @@
         <argument type="service" id="twig.extension.expression"/>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.httpkernel"/>
+        <argument type="service">
+          <service class="Symfony\Bridge\Twig\Extension\HttpKernelExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="fragment.handler"/>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.httpfoundation"/>
+        <argument type="service">
+          <service class="Symfony\Bridge\Twig\Extension\HttpFoundationExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="router.request_context" on-invalid="ignore"/>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.debug"/>
+        <argument type="service">
+          <service class="Twig_Extension_Debug" public="false">
+            <tag name="twig.extension"/>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.form"/>
+        <argument type="service">
+          <service class="Symfony\Bridge\Twig\Extension\FormExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service">
+              <service class="Symfony\Bridge\Twig\Form\TwigRenderer" public="false">
+                <argument type="service">
+                  <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
+                    <argument type="collection">
+                      <argument>IvoryCKEditorBundle:Form:ckeditor_widget.html.twig</argument>
+                      <argument>form_div_layout.html.twig</argument>
+                    </argument>
+                  </service>
+                </argument>
+                <argument type="service" id="security.csrf.token_manager" on-invalid="null"/>
+              </service>
+            </argument>
+          </service>
+        </argument>
       </call>
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
@@ -2946,34 +2942,12 @@
         </service>
       </configurator>
     </service>
-    <service id="twig.extension.profiler" class="Symfony\Bridge\Twig\Extension\ProfilerExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="twig.profile"/>
-      <argument type="service" id="debug.stopwatch" on-invalid="null"/>
-    </service>
     <service id="twig.profile" class="Twig_Profiler_Profile"/>
-    <service id="twig.extension.trans" class="Symfony\Bridge\Twig\Extension\TranslationExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="translator"/>
-    </service>
-    <service id="twig.extension.assets" class="Symfony\Bridge\Twig\Extension\AssetExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="assets.packages"/>
-      <argument type="service" id="twig.extension.httpfoundation"/>
-    </service>
-    <service id="twig.extension.actions" class="Symfony\Bundle\TwigBundle\Extension\ActionsExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="fragment.handler"/>
-    </service>
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
       <tag name="twig.extension"/>
       <argument>null</argument>
       <argument>/Users/lucianahembert/Documents/sites/symfony1VillaOrange/app</argument>
       <argument>UTF-8</argument>
-    </service>
-    <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="router"/>
     </service>
     <service id="twig.extension.yaml" class="Symfony\Bridge\Twig\Extension\YamlExtension" public="false">
       <tag name="twig.extension"/>
@@ -2984,18 +2958,6 @@
       <argument>true</argument>
     </service>
     <service id="twig.extension.expression" class="Symfony\Bridge\Twig\Extension\ExpressionExtension" public="false">
-      <tag name="twig.extension"/>
-    </service>
-    <service id="twig.extension.httpkernel" class="Symfony\Bridge\Twig\Extension\HttpKernelExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="fragment.handler"/>
-    </service>
-    <service id="twig.extension.httpfoundation" class="Symfony\Bridge\Twig\Extension\HttpFoundationExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service" id="request_stack"/>
-      <argument type="service" id="router.request_context" on-invalid="ignore"/>
-    </service>
-    <service id="twig.extension.debug" class="Twig_Extension_Debug" public="false">
       <tag name="twig.extension"/>
     </service>
     <service id="twig.translation.extractor" class="Symfony\Bridge\Twig\Translation\TwigExtractor">
@@ -3015,22 +2977,6 @@
     <service id="twig.controller.preview_error" class="Symfony\Bundle\TwigBundle\Controller\PreviewErrorController">
       <argument type="service" id="http_kernel"/>
       <argument>twig.controller.exception:showAction</argument>
-    </service>
-    <service id="twig.extension.form" class="Symfony\Bridge\Twig\Extension\FormExtension" public="false">
-      <tag name="twig.extension"/>
-      <argument type="service">
-        <service class="Symfony\Bridge\Twig\Form\TwigRenderer" public="false">
-          <argument type="service">
-            <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
-              <argument type="collection">
-                <argument>IvoryCKEditorBundle:Form:ckeditor_widget.html.twig</argument>
-                <argument>form_div_layout.html.twig</argument>
-              </argument>
-            </service>
-          </argument>
-          <argument type="service" id="security.csrf.token_manager" on-invalid="null"/>
-        </service>
-      </argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
       <argument>/Users/lucianahembert/Documents/sites/symfony1VillaOrange/app/logs/dev.log</argument>

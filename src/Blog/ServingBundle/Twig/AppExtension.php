@@ -24,31 +24,30 @@ class AppExtension extends \Twig_Extension
    * @param string $text
    * @return bool
    */
-  public function isSpam($text)
+  public function isEmail($text)
   {
-      
-    //$logger = $this->container->get('logger');
-    $this->logger->info('Nous avons récupéré le logger');
+    $this->logger->info(__METHOD__);
         
-    if(strlen($text) > 10){
-        throw new \Exception('Votre message a été détecté comme spam !');
+    if($text == 'mail'){
+        //throw new \Exception('Votre message a été détecté comme spam !');
+        $this->logger->info(__METHOD__ . ' - Detecté adresse mail :' . $text);
+        return;
     }
-    
-    return 'retour Antispam correct';
+    return 'retour Email correct';
   }
   
   // Twig va exécuter cette méthode pour savoir quelle(s) fonction(s) ajoute notre service
   public function getFunctions()
   {
     return array(
-      'checkIfSpam' => new \Twig_Function_Method($this, 'isSpam')
+      'checkIfEmail' => new \Twig_Function_Method($this, 'isEmail')
     );
   }
   
   // La méthode getName() identifie votre extension Twig, elle est obligatoire
   public function getName()
   {
-    return 'AppExtensin';
+    return 'AppExtension';
   }
   
 }

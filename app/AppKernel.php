@@ -47,7 +47,7 @@ class AppKernel extends Kernel
     protected function buildContainer()
     {
         $containerBuilder = parent::buildContainer();
-        $containerBuilder->addCompilerPass(new \Blog\ServingBundle\DependencyInjection\Compiler\TwigExtensionCompilerPass());
+        //$containerBuilder->addCompilerPass(new \Blog\ServingBundle\DependencyInjection\Compiler\TwigExtensionPass());
         return $containerBuilder;
     }
 }
